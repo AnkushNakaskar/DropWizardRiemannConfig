@@ -1,0 +1,36 @@
+server:
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  applicationConnectors:
+    - type: http
+      port: 8185
+  adminConnectors:
+    - type: http
+      port: 8186
+defaultSize: 5
+discovery:
+  serviceName: other-service
+riemann:
+  host: 127.0.0.1
+  port: 5555
+  prefix: test_prefix
+  pollingInterval: 11
+  tags:
+    - YOUR_APPLICATION_TAG
+  attributes:
+    hostname: localhost
+    env: local
+
+logging:
+  level: INFO
+  # Logger-specific levels.
+  loggers:
+    dropwizard: INFO
+    org.apache.tomcat.jdbc.pool.ConnectionPool: DEBUG
+
+    #org.apache.zookeeper: DEBUG
+  appenders:
+    - type: console
+      threshold: TRACE
+      timeZone: IST
+      logFormat: "%(%-5level) [%date] %X{TRACE-ID} [%thread] [%logger{0}]: %message%n"
