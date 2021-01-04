@@ -18,3 +18,7 @@
             ```
           INFO [2020-12-30 19:39:38,821] defaultEventExecutorGroup-2-2 - riemann.config - #riemann.codec.Event{:host PP-C02D1513MD6M.local, :service test_prefix.org.eclipse.jetty.server.HttpConnectionFactory.8186.connections.m15_rate, :state nil, :description nil, :metric 0.0, :tags [YOUR_APPLICATION_TAG], :time 1609337378, :ttl nil, :app YOUR_APPLICATION_TAG, :hostname localhost, :metric-type Timer, :env local}
             ```      
+    * Also added the influxDB config in riemann config. you need to install influxDB on local for this.
+        *   ```Check the influx db data ingestion using queries from page : https://oznetnerd.com/2017/06/11/getting-know-influxdb/```
+        
+             
